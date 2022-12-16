@@ -214,28 +214,24 @@ const listaOrdenadaAlf = [...listaLua].sort ( (a,b) =>{
 //muestrelo en un alert().
 
 
-let buscarProducto = prompt (`
-    Ingrese su producto deseado:
-    Yogurt Firme 125grs
-    Yogurt con Cereales
-    Yogurt 1 Litro
-    Dulce de Leche 250grs
-    Dulce de Leche 400grs
-    Manteca 250grs
-    Manteca 500 grs
-    Crema de Leche`)
+let buscarProducto =parseInt( prompt (`
+    Ingrese el código del producto`))
 
-// const prodBuscado = listaLua.find ( (objeto) =>{
-//     return objeto.producto === buscarProducto
-// } )
+const prodBuscado = listaLua.find ( (objeto) =>{
+    return objeto.id === buscarProducto
+} )
 
-// console.log(prodBuscado)
+alert(`
+    Producto:  ${prodBuscado.producto}
+    Descripción: ${prodBuscado.descripcion}
+    Fecha de Vencimiento: ${prodBuscado.fechaVencimiento}
+    Precio: $ ${prodBuscado.precio}`)
 
 
 
 
 
-const prodBuscado = listaLua.find(item => item.producto == buscarProducto);
+// const prodBuscado = listaLua.find(item => item.producto == buscarProducto);
 
 
 // const prodBuscado = listaLua.find ( (elem) =>{
