@@ -152,15 +152,21 @@ console.log(listaLua)
 
 // Quiero que algunos de los elementos tengan un true en oferta.
 
+
+
 // 2) Utilizar un método de array que verifique si oferta es true,
 // en el caso de que lo sea, haga un 15%, 5%, 20%, 10% de descuento 
 //(elijan el descuento que quieran).
 
-// listaLua.forEach ( (elemento) =>{
-//     if( elemento.oferta === true){
-//         console.log( Math.round(elemento.precio*0.90) )
-//     }
-// } )
+listaLua.forEach ( (elemento) =>{
+    if( elemento.oferta === true){
+        console.log(`Este producto: ${elemento.producto},
+            tiene un 10% de descuento.
+            Su precio final queda en $ ${Math.round(elemento.precio*0.90)}` )
+    }
+} )
+
+
 
 
 // 3) Utilizando un método de array, que ordene a los elementos de 
@@ -187,7 +193,9 @@ const listaOrdenadaAlf = [...listaLua].sort ( (a,b) =>{
     }
 })
 
-// console.log(listaOrdenadaAlf)
+console.log(listaOrdenadaAlf)
+
+
 
 
 
@@ -196,21 +204,21 @@ const listaOrdenadaAlf = [...listaLua].sort ( (a,b) =>{
 //filtre el array y que muestre en consola cada una de las ofertas.
 
 
-// let oferta = confirm (" ¿Desea ver las ofertas ?")
+let oferta = confirm (" ¿Desea ver las ofertas ?")
 
-// if(oferta === true){
-//      listaLua.filter ( (element) =>{
-//         if (element.oferta === true){
-//             console.log(` OFERTA: ${element.producto} - ${element.descripcion}`)
-//         }
-//     } )
+if(oferta === true){
+     listaLua.filter ( (element) =>{
+        if (element.oferta === true){
+            console.log(` OFERTA: ${element.producto} - ${element.descripcion}`)
+        }
+    } )
     
-// }
+}
 
 
 
 // 5) A través de un prompt, permita al usuario buscar productos. 
-//Una vez que ingrese un producto, busquen con find dicho producto y 
+//Una vez que ingrese un producto (código), busquen con find dicho producto y 
 //muestrelo en un alert().
 
 
@@ -226,28 +234,3 @@ alert(`
     Descripción: ${prodBuscado.descripcion}
     Fecha de Vencimiento: ${prodBuscado.fechaVencimiento}
     Precio: $ ${prodBuscado.precio}`)
-
-
-
-
-
-// const prodBuscado = listaLua.find(item => item.producto == buscarProducto);
-
-
-// const prodBuscado = listaLua.find ( (elem) =>{
-//     return elem.producto === buscarProducto
-// } )
-// console.log(prodBuscado.producto)
-
-
-// listaLua.find ( (elem) =>{
-//     if ( buscarProducto === elem.producto){
-//         return alert(`${elem.producto}`)
-//     }
-// } )
-
-// const prodBuscado = listaLua.find ( (objeto) =>{
-//     return objeto.producto === buscarProducto
-// } );
-
-// console.log(prodBuscado.producto)
